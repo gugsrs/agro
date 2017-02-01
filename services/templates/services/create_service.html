@@ -1,0 +1,40 @@
+<h1>Adicionar Serviço</h1>
+
+<form method="POST" action="create">{% csrf_token %}
+	<label>Nome do serviço:</label>
+	</br>
+	<input id="name" name="name" type="text">
+	</br>
+	<label>Custo do serviço:</label>
+	</br>
+	<input id="cost" name="cost" type="number" step="any">
+	</br>
+	<label>Data de início do serviço:  </label>
+	</br>
+	<input id="date_start" name="date_start" type="date">
+	</br>
+	<label>Data de término do serviço:  </label>
+	</br>
+	<input id="date_end" name="date_end" type="date">
+	</br>
+	<select name="harvest_id">
+		{% for harvest in harvests %}
+		<option value="{{ harvest.id }}">{{ harvest.id }} - {{ harvest.name }}</option>
+		{% endfor %}
+	</select>
+
+	<table>
+		<tr>
+			<td> Produto </td>
+			<td> Quantidade </td>
+		</tr>
+		{% for product in products %}
+		<tr>
+			<td>{{ product.name }}</td>
+			<td><input type="number" name="{{ product.id }}" id="product_id" value=0></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<button type="submit">Save</button>
+</form>

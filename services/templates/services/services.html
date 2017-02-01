@@ -1,0 +1,25 @@
+<h1>Serviços</h1>
+<table>
+	<tr>
+		<td>Nome</td>
+		<td>Custo</td>
+		<td>Data Inicio</td>
+		<td>Data Termino</td>
+		<td>Safra</td>
+		<td>Produtos</td>
+	</tr>
+	{% for service in services %}
+	<tr>
+		<td>{{ service.name }}</td>	
+		<td>{{ service.cost }}</td>	
+		<td>{{ service.date_start }}</td>	
+		<td>{{ service.date_end }}</td>	
+		<td>{{ service.harvest.name }}</td>	
+		<td>
+			{% for product in service.products.all %}
+				{{ product.name }}
+			{% endfor %}
+		</td>	
+	</tr>
+	{% endfor %}
+</table>

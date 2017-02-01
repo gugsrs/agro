@@ -1,0 +1,26 @@
+<form method="GET" action="" >
+<table>
+	<tr>
+		<td>id</td>
+		<td>Nome</td>
+		<td>Data de inicio</td>
+		<td>Data de término</td>
+	</tr>
+	{% for harvest in harvests %}
+	<tr>
+		<td>{{ harvest.id }}</td>
+		<td>{{ harvest.name }}</td>
+		<td>{{ harvest.date_start }}</td>
+		<td>{{ harvest.date_end }}</td>
+		<td>
+			<button type="submit" formaction="edit" name="harvest_id" 
+				value="{{ harvest.id }}" >Edit</button>
+		</td>
+		<td>
+			<button type="submit" formaction="delete" name="harvest_id"
+				value={{ harvest.id }}>Delete</button>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+</form>

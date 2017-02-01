@@ -1,0 +1,16 @@
+<p> Create Harvest </p>
+<form method="POST" action="create">{% csrf_token %}
+	<label>Nome da safra:  </label>
+	</br>
+	<input id="name" name="name" type="text">
+	</br>
+	<label>Data de início da safra:  </label>
+	</br>
+	<input id="date_start" name="date_start" type="date">
+	</br>
+	<label>Data de término da safra:  </label>
+	</br>
+	<input id="date_end" name="date_end" type="date">
+	</br>
+	<button type="submit">Save</button>
+</form>

@@ -1,0 +1,24 @@
+<form method="GET" action="" >
+<table>
+	<tr>
+		<td>id</td>
+		<td>Nome</td>
+		<td>Preço médio</td>
+	</tr>
+	{% for product in products %}
+	<tr>
+		<td>{{ product.id }}</td>
+		<td>{{ product.name }}</td>
+		<td>{{ product.avg_price }}</td>
+		<td>
+			<button type="submit" formaction="edit" name="product_id"
+				value={{ product.id }}>Edit</button>
+		</td>
+		<td>
+			<button type="submit" formaction="delete" name="product_id"
+				value={{ product.id }}>Delete</button>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+</form>

@@ -1,0 +1,13 @@
+<form method="POST" action="edit">{% csrf_token %}
+	<label>Nome do produto:  </label>
+	</br>
+	<input id="name" name="name" type="text" value="{{ product.name }}">
+	</br>
+	<label>Preço do produto:  </label>
+	</br>
+	<input id="price" name="price" type="number" step="any" value="{{ product.avg_price }}">
+	</br>
+	<input id="product_id" name="product_id" value="{{ product.id }}"
+	hidden=true>
+	<button type="submit">Save</button>
+</form>
