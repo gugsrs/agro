@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/gugsrs/agro/tree/master.svg?style=svg)](https://circleci.com/gh/gugsrs/agro/tree/master)
+
 Agro
 ============
 
